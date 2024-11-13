@@ -21,6 +21,7 @@ import { TwitterButton } from './TwitterButton';
 import {useNavigate} from "react-router-dom";
 
 interface AuthFormValues {
+    name: string,
     email: string;
     password: string;
 }
@@ -54,7 +55,7 @@ export function AuthForm(props: PaperProps) {
         try {
             const response:AxiosResponse = await axios.post(
                 `${endpoint}`,
-                {email: values.email, password: values.password},
+                {name: values.name, email: values.email, password: values.password},
                 {withCredentials:true}
             );
             if (response.data.token) {
