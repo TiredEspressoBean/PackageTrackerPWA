@@ -16,7 +16,7 @@ export function SearchTrackingNumber({postPackages}: SearchTrackingNumberProps) 
 
     const fetchCarriers = async () => {
         try {
-            const response = await axios.get(`${API_URL}/carriers/`);
+            const response = await axios.get(`${API_URL}/carriers/`, {withCredentials:true});
             setCarriers(response.data.carriers || []);
         } catch (error) {
             console.error(error);
