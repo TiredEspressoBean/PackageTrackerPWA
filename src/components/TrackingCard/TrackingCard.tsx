@@ -67,9 +67,6 @@ export function TrackingCard({
                 <Stack>
                     <Group>
                         <Title order={4}>{trackingNumber}</Title>
-                        <Badge color={status === "Delivered" ? "green" : "yellow"} size="sm">
-                            {status}
-                        </Badge>
                     </Group>
                     <Group mt="sm" align="center">
                         <TbTruck size={16} color="#888"/>
@@ -77,6 +74,9 @@ export function TrackingCard({
                     </Group>
                 </Stack>
                 <Stack>
+                    <Badge color={status === "Delivered" ? "green" : "yellow"} size="sm">
+                        {status}
+                    </Badge>
                     <Group>
                         <TbCalendar size={16} color="#888"/>
                         <Text color="dimmed" size="sm">
@@ -84,7 +84,6 @@ export function TrackingCard({
                             Delivery: {expectedDeliveryDate} {estimatedDeliveryTime && `at ${estimatedDeliveryTime}`}
                         </Text>
                     </Group>
-                    <Text color="dimmed" size="sm">{history["0"].eventDescription}</Text>
                 </Stack>
                 <Group>
                     <ActionIcon variant="light" style={{right: '1rem'}} size="xl">

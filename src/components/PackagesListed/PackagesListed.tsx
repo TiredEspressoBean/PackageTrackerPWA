@@ -56,7 +56,7 @@ export function PackagesListed({
                         carrier={item.carrier}
                         expectedDeliveryDate={item.expectedDeliveryDate}
                         estimatedDeliveryTime={item.estimatedDeliveryTime}
-                        status={item.status}
+                        status={item.currentStatus}
                         history={item.history}
                         onUpdate={() => handleUpdate(item.trackingNumber, item.carrier)}
                         handleRemove={() => handleRemove(item.trackingNumber)}
